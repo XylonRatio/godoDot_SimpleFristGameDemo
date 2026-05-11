@@ -1,0 +1,18 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbijdwe4dxa1h"
+valid=false
+
+[deps]
+
+source_file="res://__MACOSX/Mystery 2 OGG files/._Magic Fx 6.ogg"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

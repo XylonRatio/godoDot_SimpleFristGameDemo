@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qevsuw4rpwkx"]
+
+[ext_resource type="AudioStream" uid="uid://b56gb31qbms25" path="res://AudioAssets/Battle Encounter.ogg" id="1_2kasm"]
+
+[node name="BGM" type="AudioStreamPlayer" unique_id=978636158]
+stream = ExtResource("1_2kasm")
+volume_db = -16.0
+autoplay = true

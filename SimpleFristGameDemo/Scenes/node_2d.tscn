@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cjuwolqw7mm8q"]
+
+[ext_resource type="Script" uid="uid://b6jo041whg6xf" path="res://script/GameManger.gd" id="1_6whob"]
+[ext_resource type="Texture2D" uid="uid://cvrbsx3qgcnbt" path="res://ImageAssets/BackGround/witheBackground.png" id="1_j2wod"]
+[ext_resource type="PackedScene" uid="uid://w5khqvkv3qoh" path="res://Scenes/player.tscn" id="2_v1qfn"]
+[ext_resource type="PackedScene" uid="uid://shsgdl6a8oth" path="res://Scenes/slimer.tscn" id="3_hh5uf"]
+[ext_resource type="FontFile" uid="uid://buq8wclqv2l7" path="res://ImageAssets/UI/Uranus_Pixel_11Px.ttf" id="5_u7krg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v1qfn"]
+distance = -101.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hh5uf"]
+distance = -211.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6whob"]
+normal = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1601992233 node_paths=PackedStringArray("spawn_timer", "score_label", "game_over_label")]
+y_sort_enabled = true
+script = ExtResource("1_6whob")
+slimer_scene = ExtResource("3_hh5uf")
+spawn_timer = NodePath("slimer_spawn_timer")
+score_label = NodePath("UI/ScoreLabel")
+game_over_label = NodePath("UI/GameOver Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663475277]
+position = Vector2(0, -136)
+texture = ExtResource("1_j2wod")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=522029503]
+
+[node name="Player" parent="." unique_id=732518384 instance=ExtResource("2_v1qfn")]
+position = Vector2(-169, 55)
+
+[node name="boundary" type="Node2D" parent="." unique_id=108504319]
+
+[node name="ariwall_Down" type="StaticBody2D" parent="boundary" unique_id=1181872522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundary/ariwall_Down" unique_id=667004563]
+shape = SubResource("WorldBoundaryShape2D_v1qfn")
+
+[node name="airwall_Left" type="StaticBody2D" parent="boundary" unique_id=280056492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundary/airwall_Left" unique_id=987184563]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hh5uf")
+
+[node name="airwall_Right" type="StaticBody2D" parent="boundary" unique_id=943107633]
+rotation = 3.1415925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundary/airwall_Right" unique_id=1247356339]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hh5uf")
+
+[node name="ariwall_UP" type="StaticBody2D" parent="boundary" unique_id=1556211345]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundary/ariwall_UP" unique_id=1391763950]
+position = Vector2(0, -136)
+shape = SubResource("WorldBoundaryShape2D_6whob")
+
+[node name="slimer_spawn_timer" type="Timer" parent="." unique_id=1037313819]
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1986605321]
+
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=949178111]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0.49926442, 5.7756904e-07, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("5_u7krg")
+theme_override_font_sizes/font_size = 42
+text = "Score:0"
+
+[node name="GameOver Label" type="Label" parent="UI" unique_id=1591761579]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -11.5
+offset_right = 36.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.45882353, 0.08235294, 0.07058824, 1)
+theme_override_constants/outline_size = 39
+theme_override_fonts/font = ExtResource("5_u7krg")
+theme_override_font_sizes/font_size = 120
+text = "GameOver!"
+
+[connection signal="timeout" from="slimer_spawn_timer" to="." method="_on_slimer_spawn_timer_timeout"]

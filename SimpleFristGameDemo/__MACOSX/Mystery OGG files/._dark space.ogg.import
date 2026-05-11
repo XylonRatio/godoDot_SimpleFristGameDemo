@@ -1,0 +1,18 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8hhk5f8ux7av"
+valid=false
+
+[deps]
+
+source_file="res://__MACOSX/Mystery OGG files/._dark space.ogg"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

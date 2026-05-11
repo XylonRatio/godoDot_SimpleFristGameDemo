@@ -1,0 +1,18 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jx7muwrlid0x"
+valid=false
+
+[deps]
+
+source_file="res://__MACOSX/Mystery OGG files/._Dark Ambient 2.ogg"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
