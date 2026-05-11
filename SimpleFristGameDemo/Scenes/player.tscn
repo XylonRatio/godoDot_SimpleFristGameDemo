@@ -147,10 +147,8 @@ bullet_scene = ExtResource("2_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=971952472]
 sprite_frames = SubResource("SpriteFrames_fkybt")
-animation = &"game over"
+animation = &"idle"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.15718858
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749651507]
 position = Vector2(0, 5)
@@ -170,6 +168,7 @@ volume_db = 6.0
 stream = ExtResource("7_3smsa")
 
 [node name="restar_timer" type="Timer" parent="." unique_id=508317829]
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_fire"]

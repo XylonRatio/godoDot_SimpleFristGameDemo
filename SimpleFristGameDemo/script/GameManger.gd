@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	spawn_timer.wait_time -= 0.2 * delta
 	spawn_timer.wait_time = clamp(spawn_timer.wait_time,1,3)
-	score_label.text = "Score : " + str(score)
+	score_label.text = " Score : " + str(score)
 	pass
 
 

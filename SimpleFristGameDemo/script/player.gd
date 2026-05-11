@@ -33,8 +33,8 @@ func game_over() -> void:
 		is_game_over = true
 		animator.play("game over")
 		$game_over_audio.play()
+		$restar_timer.start() # 延迟3秒
 		get_tree().current_scene.show_game_over()
-		# 延迟3秒
 		"""
 		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()

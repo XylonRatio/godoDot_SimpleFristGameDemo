@@ -21,6 +21,8 @@ Bgm="*uid://qevsuw4rpwkx"
 
 [display]
 
+window/size/viewport_width=480
+window/size/viewport_height=280
 window/stretch/mode="canvas_items"
 
 [dotnet]
